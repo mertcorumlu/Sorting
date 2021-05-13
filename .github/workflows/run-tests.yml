@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
       - name: Cache Maven packages
         uses: actions/cache@v2
         with:
@@ -21,6 +22,10 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn clean verify -Dmaven.test.skip=true
+      - uses: actions/upload-artifact@v2
+        with:
+          name: maven-build
+          path: [~/target, ~/.m2, pom.xml]
 
   test:
     needs: build
@@ -28,5 +33,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: maven-build
+
       - name: Test with Maven
         run: mvn surefire:test
