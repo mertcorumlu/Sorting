@@ -31,7 +31,7 @@ jobs:
           name: maven-build
           path: |
             target
-            .m2
+            ~/.m2
             pom.xml
 
   test:
