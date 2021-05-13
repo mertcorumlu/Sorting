@@ -78,7 +78,7 @@ public class Main <T extends Comparable<T>>{
 
         if (l >= r) return; // Exit condition
 
-        T pivot = array[new Random().nextInt(r - l + 1) + l];
+        T pivot = array[new Random().nextInt(r - l + 1)];
 
         int low = l;
         int high = r;
