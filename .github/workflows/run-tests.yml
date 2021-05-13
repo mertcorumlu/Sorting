@@ -21,7 +21,7 @@ jobs:
           java-version: '15'
           distribution: 'adopt'
       - name: Build with Maven
-        run: mvn verify -Dmaven.test.skip=true
+        run: mvn clean verify -Dmaven.test.skip=true
 
   test:
     needs: build
@@ -29,12 +29,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up JDK 15
-        uses: actions/setup-java@v2
-        with:
-          java-version: '15'
-          distribution: 'adopt'
-      - name: Build with Maven
+      - name: Test with Maven
         run: mvn surefire:test
