@@ -1,7 +1,8 @@
 package sorting;
 
-import java.util.*;
-import java.util.stream.Collector;
+
+import java.util.Arrays;
+import java.util.Random;
 
 public class Main <T extends Comparable<T>>{
 

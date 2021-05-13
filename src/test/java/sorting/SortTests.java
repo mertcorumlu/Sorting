@@ -1,14 +1,13 @@
 package sorting;
 
-import org.junit.*;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
 import java.util.Random;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@TestMethodOrder(MethodOrderer.DisplayName.class)
 public class SortTests {
 
     private Main<Integer> sorter = new Main<>();
@@ -18,7 +17,7 @@ public class SortTests {
     @Test
     public void test1Selection() {
         rand = new Random(seed);
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 1000; i++) {
             long size = rand.nextInt(300) + 20;
             Integer[] testArray = Arrays.stream(rand.ints(size).toArray()).boxed().toArray(Integer[]::new);
             Integer[] sorted = Arrays.stream(testArray).sorted().toArray(Integer[]::new);
@@ -31,7 +30,7 @@ public class SortTests {
     @Test
     public void test2Insertion() {
         rand = new Random(seed);
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 1000; i++) {
             long size = rand.nextInt(300) + 20;
             Integer[] testArray = Arrays.stream(rand.ints(size).toArray()).boxed().toArray(Integer[]::new);
             Integer[] sorted = Arrays.stream(testArray).sorted().toArray(Integer[]::new);
@@ -44,7 +43,7 @@ public class SortTests {
     @Test
     public void test3Merge() {
         rand = new Random(seed);
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 1000; i++) {
             long size = rand.nextInt(300) + 20;
             Integer[] testArray = Arrays.stream(rand.ints(size).toArray()).boxed().toArray(Integer[]::new);
             Integer[] sorted = Arrays.stream(testArray).sorted().toArray(Integer[]::new);
@@ -57,7 +56,7 @@ public class SortTests {
     @Test
     public void test4Quick() {
         rand = new Random(seed);
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 1000; i++) {
             long size = rand.nextInt(300) + 20;
             Integer[] testArray = Arrays.stream(rand.ints(size).toArray()).boxed().toArray(Integer[]::new);
             Integer[] sorted = Arrays.stream(testArray).sorted().toArray(Integer[]::new);
