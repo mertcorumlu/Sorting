@@ -25,7 +25,10 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: maven-build
-          path: [~/target, ~/.m2, pom.xml]
+          path: |
+            target
+            .m2
+            pom.xml
 
   test:
     needs: build
