@@ -26,9 +26,11 @@
                 <version>2.22.0</version>
 
                 <configuration>
-                    <argLine>--enable-preview</argLine>
+                    <disableXmlReport>true</disableXmlReport>
+                    <useFile>false</useFile>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
     <dependencies>
